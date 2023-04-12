@@ -3,8 +3,8 @@ const sendgridApiKey = process.env.SENDGRID_API_KEY
 
 sgMail.setApiKey(sendgridApiKey)
 
-const sendAccountCreationMail = (email, name) =>{
-    sgMail.send({
+const sendAccountCreationMail = async (email, name) =>{
+    await sgMail.send({
         to:email,
         from:'aishwarya.roychoudhury@gmail.com',
         subject:'Thanks for joining in!',
@@ -12,8 +12,8 @@ const sendAccountCreationMail = (email, name) =>{
     })
 }
 
-const sendAccountDeletionMail = (email, name) =>{
-    sgMail.send({
+const sendAccountDeletionMail = async (email, name) =>{
+    await sgMail.send({
         to:email,
         from:'aishwarya.roychoudhury@gmail.com',
         subject:'Sorry to see you go!',

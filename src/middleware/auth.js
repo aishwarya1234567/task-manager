@@ -15,7 +15,7 @@ const auth = async (req,res,next)=>{
         req.token = authToken
         next()
     }catch(e){
-        res.send({error: 'Authentication required.'})
+        res.status(400).send({error: 'Authentication required.'})
     }
 }
 

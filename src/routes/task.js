@@ -90,7 +90,7 @@ router.patch('/tasks/:id', auth, async (req, res)=>{
         await task.save()
         res.send(task)
     }catch(error){
-        console.log(error)
+        return res.status(400).send(error)
     }
 })
 
@@ -105,7 +105,7 @@ router.delete('/tasks/:id', auth, async (req, res)=>{
 
         res.send(task)
     }catch(error){
-        console.log(error)
+        return res.status(400).send(error)
     }
 })
 

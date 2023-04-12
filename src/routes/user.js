@@ -83,7 +83,7 @@ router.patch('/users/me', auth, async (req, res)=>{
         
         res.send(req.user)
     }catch(error){
-        console.log(error)
+        res.status(400).send(error)
     }
 })
 
@@ -93,7 +93,7 @@ router.delete('/users/me', auth, async (req, res)=>{
         sendAccountDeletionMail(req.user.email, req.user.name)
         res.send(req.user)
     }catch(error){
-        console.log(error)
+        res.status(400).send(error)
     }
 })
 
